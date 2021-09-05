@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace EmailApp.Views
 {
-    public partial class HomePage : ContentPage
+    public partial class HomePage : TabbedPage
     {
         public HomePage()
         {

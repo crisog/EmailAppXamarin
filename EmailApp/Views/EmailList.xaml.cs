@@ -15,13 +15,8 @@ namespace EmailApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EmailList : ContentPage
     {
-        public ObservableCollection<Email> Emails { get; set; }
 
         public EmailList()
-        {
-            InitializeComponent();
-        }
-        public EmailList(ObservableCollection<Email> emails)
         {
             InitializeComponent();
             BindingContext = new EmailListViewModel(new NavigationService());

@@ -1,9 +1,20 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
-<ContentPage
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="EmailApp.Views.HomePage">
-    <ContentPage.Content>
-        
-    </ContentPage.Content>
-</ContentPage>
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:local="clr-namespace:EmailApp.Views"
+    x:Class="EmailApp.Views.HomePage"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+    android:TabbedPage.ToolbarPlacement="Bottom"
+    android:TabbedPage.BarItemColor="Gray"
+    android:TabbedPage.BarSelectedItemColor="	#c71610"
+    NavigationPage.IconColor="Black"
+    NavigationPage.HasNavigationBar="False"
+    BackgroundColor="White">
+
+    <TabbedPage.Children>
+        <local:EmailList Title="Mail" />
+    </TabbedPage.Children>
+
+</TabbedPage>

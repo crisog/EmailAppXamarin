@@ -11,7 +11,7 @@ namespace EmailApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new EmailList());
+            MainPage = new NavigationPage(new HomePage());
         }
 
         protected override void OnStart()
