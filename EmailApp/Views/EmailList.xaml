@@ -34,7 +34,16 @@
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
-                                        <StackLayout>
+                                        <SwipeView>
+                                            <SwipeView.RightItems>
+                                                <SwipeItems>
+                                                    <SwipeItem Text="Delete"
+                                                               IconImageSource="https://img.icons8.com/ios-glyphs/30/000000/delete.png"
+                                                               BackgroundColor="Red"
+                                                               Command="{Binding DeleteCommand}"
+                                                               />
+                                                </SwipeItems>
+                                            </SwipeView.RightItems>
                                         <Grid Margin="10">
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="*"/>
@@ -51,7 +60,7 @@
                                             <Label Grid.Row="1" Grid.Column="0" TextColor="Black" FontSize="11" Text="{Binding Body}" LineBreakMode="TailTruncation"/>
                                         
                                             </Grid>
-                                            </StackLayout>
+                                            </SwipeView>
                                   </ViewCell>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
