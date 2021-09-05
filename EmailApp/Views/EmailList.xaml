@@ -16,7 +16,7 @@
                             </Grid.ColumnDefinitions>
 
                             <Label Grid.Row="0" Grid.Column="0" Text="EmailApp" TextColor="White" FontSize="20" VerticalOptions="Center" Margin="5"/>
-                            <ImageButton Grid.Row="0" Grid.Column="2" Source="https://img.icons8.com/color/96/000000/send-mass-email.png" BackgroundColor="Transparent" Margin="0,0,20,0"/>            
+                            <ImageButton Grid.Row="0" Grid.Column="2" Source="https://img.icons8.com/color/96/000000/send-mass-email.png" BackgroundColor="Transparent" Margin="0,0,20,0" Command="{Binding ComposeEmailCommand}"/>            
                         </Grid>
                         
                         <ListView x:Name="EmailListView"
