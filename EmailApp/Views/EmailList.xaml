@@ -4,6 +4,7 @@
              x:Class="EmailApp.Views.EmailList"
              BackgroundColor="#DB4437"
              Padding="0"
+             Title="EmailApp"
              >
             <ContentPage.Content>
                 <ScrollView Margin="0,10,0,5" VerticalOptions="FillAndExpand">

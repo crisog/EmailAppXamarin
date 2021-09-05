@@ -2,8 +2,19 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="EmailApp.Views.EmailCompose">
-    <ContentPage.Content>
-        
-    </ContentPage.Content>
+    x:Class="EmailApp.Views.EmailCompose"
+    BackgroundColor="White"
+    Title="Email App - Compose Email"
+    >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="https://img.icons8.com/color/96/000000/send.png" Order="Primary" Priority="2" Command="{Binding SaveCommand}"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+    <Entry Placeholder="From: Email" Text="{Binding ComposeEmail.From}" VerticalOptions="Start" Margin="10"/>
+    <Entry Placeholder="To: Email" Text="{Binding ComposeEmail.To}" VerticalOptions="Start" Margin="10"/>
+    <Entry Placeholder="Subject" Text="{Binding ComposeEmail.Subject}" VerticalOptions="Start" Margin="10"/>
+    <Editor Placeholder="Write your message here..." Text="{Binding ComposeEmail.Body}" BackgroundColor="LightGray" HeightRequest="100" Margin="10"/>
+    </StackLayout>
+   
 </ContentPage>
