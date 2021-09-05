@@ -11,7 +11,12 @@ namespace EmailApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new HomePage());
+            MainPage = new NavigationPage(new HomePage()) {
+                Title = "EmailApp",
+                BarBackgroundColor = Color.FromHex("#DB4437"),
+                BarTextColor = Color.White,
+            };
+            
         }
 
         protected override void OnStart()

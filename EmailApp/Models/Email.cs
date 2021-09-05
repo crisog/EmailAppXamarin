@@ -14,6 +14,8 @@ namespace EmailApp.Models
             return dateTime;
         }
 
+        public Email() {}
+
         public Email(string from, string to, string subject, string body, double unixTimestamp)
         {
             From = from;

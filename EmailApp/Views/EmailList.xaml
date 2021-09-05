@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:EmailApp.Behaviors"
              x:Class="EmailApp.Views.EmailList"
              BackgroundColor="#DB4437"
              Padding="0"
@@ -25,6 +25,10 @@
                                   SeparatorVisibility="Default"
                                   BackgroundColor="White"
                                   ItemsSource="{Binding Emails}"
+                                  SelectedItem="{Binding SelectedProfile}"
+                                  SelectionMode="Single"
+                                  IsPullToRefreshEnabled="true"
+                                  RefreshControlColor="#DB4437"
                                   > 
                             <ListView.ItemTemplate>
                                 <DataTemplate>
@@ -50,6 +54,9 @@
                                   </ViewCell>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
+                            <ListView.Behaviors>
+                                <local:SelectionChangedEventBehavior Command="{Binding ItemTappedCommand}" />
+                            </ListView.Behaviors>
                         </ListView>
                     </StackLayout>
                 </ScrollView>
