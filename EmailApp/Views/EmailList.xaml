@@ -1,9 +1,63 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
-<ContentPage
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="EmailApp.Views.EmailList">
-    <ContentPage.Content>
-        
-    </ContentPage.Content>
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EmailApp.Views.EmailList">
+
+    <ContentPage.Resources>
+                <StyleSheet Source="/Assets/global.css" />
+                <Style TargetType="StackLayout" Class="ListItemPage">
+                    <Setter Property="BackgroundColor" Value="#F8D9D7" />
+                    <Setter Property="Orientation" Value="Horizontal" />
+                    <Setter Property="WidthRequest" Value="350" />
+                    <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+                    <Setter Property="Padding" Value="15, 2, 0, 2" />
+                    <Setter Property="Spacing" Value="150" />
+                </Style>
+
+                <Style TargetType="Button" Class="ButtonItem">
+                    <Setter Property="BackgroundColor" Value="#E6E6E6" />
+                    <Setter Property="TextColor" Value="#B93221" />
+                    <Setter Property="FontSize" Value="15" />
+                    <Setter Property="TextTransform" Value="None" />
+                    <Setter Property="WidthRequest" Value="350" />
+                </Style>
+
+            </ContentPage.Resources>
+                                                
+            <ContentPage.Content>
+                <ScrollView Margin="0,10,0,5" VerticalOptions="FillAndExpand">
+                    <StackLayout>
+                        <Label Text="Email" TextColor="#DB4437" FontSize="20" Margin="20, 0, 0, 20"/>
+
+
+                        <ListView x:Name="emailList"
+                                  RowHeight="55"
+                                  SeparatorVisibility="Default"
+                                  BackgroundColor="#e8e8e8">
+
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout VerticalOptions="FillAndExpand"
+                                                     Orientation="Horizontal"
+                                                     Padding="20,10,0,10"
+                                                     Spacing="20">
+
+                                            <Image Source="{Binding Icon}"
+                                                     WidthRequest="40"
+                                                     HeightRequest="40"
+                                                     VerticalOptions="Start" />
+
+                                            <Label Text="{Binding Title}"
+                                                     FontSize="Small"
+                                                     VerticalOptions="End"
+                                                     TextColor="Black"/>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </ScrollView>
+            </ContentPage.Content>
 </ContentPage>
