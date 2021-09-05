@@ -8,8 +8,6 @@
                     <StackLayout>
                         <Label Text="Email" TextColor="#DB4437" FontSize="20" Margin="20, 0, 0, 20"/>
                         <ListView x:Name="EmailListView"
-                                  RowHeight="55"
-                                  SeparatorVisibility="Default"
                                   BackgroundColor="#e8e8e8"
                                   ItemsSource="{Binding Emails}"
                                   >
@@ -17,10 +15,24 @@
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
-                                    <StackLayout Orientation="Vertical" Spacing="4" Padding="5" >
-                                      <Label Text="{Binding From}" TextColor="Black" />
-                                      <Label Text="{Binding Subject}" Margin="10,0,0,0" />
-                                    </StackLayout>
+                                        <StackLayout>
+                                        <Grid Margin="5">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                        
+                                            <Label Grid.Row="0" Grid.Column="0" TextColor="Black" FontSize="11" Text="{Binding FormattedFrom}" HorizontalOptions="Start" />
+                                            <Label Grid.Row="0" Grid.Column="2" TextColor="Black" FontSize="11" Text="{Binding DateTime}"/>
+                                            <Label Grid.Row="1" Grid.Column="0" TextColor="Black" FontSize="11" Text="{Binding Body}" LineBreakMode="TailTruncation"/>
+                                        
+                                            </Grid>
+                                            </StackLayout>
                                   </ViewCell>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
