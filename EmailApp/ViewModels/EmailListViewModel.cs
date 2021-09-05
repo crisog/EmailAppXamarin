@@ -27,12 +27,6 @@ namespace EmailApp.ViewModels
 
         public EmailListViewModel(INavigationService navigationService) : base(navigationService)
         {
-
-            Emails.Add(new Email("cris@gmail.com", "joe@gmail.com", "testing", "This is an awesome email. Nobody is going to know what we are talking about. I'm glad about that!", 1630818389));
-            Emails.Add(new Email("cris@gmail.com", "joe@gmail.com", "testing", "This is an awesome email. Nobody is going to know what we are talking about. I'm glad about that!", 1630818389));
-            Emails.Add(new Email("cris@gmail.com", "joe@gmail.com", "testing", "This is an awesome email. Nobody is going to know what we are talking about. I'm glad about that!", 1630818389));
-            Emails.Add(new Email("cris@gmail.com", "joe@gmail.com", "testing", "This is an awesome email. Nobody is going to know what we are talking about. I'm glad about that!", 1630818389));
-
             ComposeEmailCommand = new Command<Email>(RedirectToCompose);
             ItemTappedCommand = new Command<Email>(ItemTapped);
         }
@@ -40,11 +34,13 @@ namespace EmailApp.ViewModels
         private async void RedirectToCompose(Email email)
         {
             await NavigationService.NavigateAsync(new EmailCompose(Emails));
+            SelectedEmail = null;
         }
 
         private async void ItemTapped(Email email)
         {
             await NavigationService.NavigateAsync(new EmailDetail(email));
+            SelectedEmail = null;
         }
     }
 }

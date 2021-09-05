@@ -4,6 +4,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:EmailApp.Views"
     x:Class="EmailApp.Views.HomePage"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+    android:TabbedPage.ToolbarPlacement="Bottom"
+    android:TabbedPage.BarItemColor="Gray"
+    android:TabbedPage.BarSelectedItemColor="	#c71610"
     NavigationPage.IconColor="Black"
     NavigationPage.HasNavigationBar="False"
     BackgroundColor="White">
